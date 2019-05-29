@@ -1,8 +1,14 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using Microsoft.EntityFrameworkCore.Internal
+@model Product
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-left">
+    <h1>Produit</h1>
+    <p>Nom: @Model.name</p>
+    <p>Description : @Model.description</p>
+    <p>Note sur 100 : @Model.rating</p>
+    <h4>Détails</h4>
+    <p>Couleurs Disponibles: @Model.details.availableColors.Join(",")</p>
+    <p>Taille: @Model.details.size</p>
+    <p>Prix: $@Model.details.price</p>
+    <sub>Vendu par @ViewBag.Vendor</sub>
 </div>
